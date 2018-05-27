@@ -21,7 +21,8 @@
    "react/prefer-stateless-function": 0,
   "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   "react/no-unescaped-entities": ["error", {"forbid": [">", "}"]}],
-  "import/no-named-as-default": 0
+  "import/no-named-as-default": 0,
+  "react/prop-types": 0
 
   } 
 }
