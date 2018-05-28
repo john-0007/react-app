@@ -13,7 +13,16 @@ class App extends Component {
       
     ]
   }
-
+  
+  nameChangeHandler = (event) => {
+    const name = event.target.value;
+    this.setState( () => ({persons: [
+        {name, age: 29},
+        {name, age: 20},
+        {name, age: 24}
+      ]})
+    );
+  }
   switchNameHandler = () => {
     this.setState( () => ({persons: [
         {name: 'John!!', age: 29},
@@ -24,12 +33,28 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      backgroundColor: '#fff',
+      border: '1px solid blue',
+      padding: '8px',
+      font: 'inherit',
+      cursor: 'pointer'
+    }
     return (
       <div className="container">
         <h1>Hi I'm a React App</h1>
         <p>This is really working!</p>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
-        { this.state.persons.map( ({ name, age}) => <Person name={name} age={age}/>)}
+        <button 
+          style={style}
+          onClick={this.switchNameHandler}>
+          Switch Name
+        </button>
+        { this.state.persons.map( ({ name, age}, index) => <Person 
+          name={name} 
+          age={age} 
+          change={this.nameChangeHandler}
+          key={index}
+        />)}
       </div>
     );
   }

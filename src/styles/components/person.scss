@@ -1,8 +1,12 @@
-.person{
+.person {
   margin:1.6rem auto;
   width: 60%;
   border:1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   padding:1.6rem;
   text-align: center;
+  input {
+    border:1px solid grey;
+    padding:.5rem 1rem;
+  }
 }
